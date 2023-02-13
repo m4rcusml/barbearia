@@ -6,7 +6,7 @@
 }
 :root {
     --cor01: #222224;
-    --cor02: #5A4532;
+    --cor02: #c48e60;
 }
 html {
     scroll-behavior: smooth;
@@ -16,6 +16,12 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+header .img-container {
+    width: 58px;
+}
+header .img-container img {
+    border-radius: 50%;
 }
 a {
     color: white;
@@ -48,11 +54,13 @@ a:hover {
 }
 #inicio p {
     font-size: 3em;
-    text-shadow: 3px 3px 8px black;
+    text-shadow: 0 3px 8px black;
+    max-width: 500px;
 }
 button {
     background-color: transparent;
     border: 2px solid white;
+    font-weight: bold;
 }
 button a {
     display: inline-block;
@@ -60,12 +68,17 @@ button a {
 }
 #sobre {
     max-width: 800px;
-    height: 600px;
+    min-height: 690px;
+    padding: 2em 1em;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap: .5em;
+}
+p {
+    text-align: center;
 }
 .titulo {
     text-align: center;
@@ -79,10 +92,186 @@ button a {
 .cortes {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     align-content: center;
-    gap: 1.5em;
+    gap: 1.3em;
+}
+.cortes .img-container {
+    width: 250px;
+    height: 240px;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
 }
 #portifolio {
     background-color: var(--cor01);
-    height: 600px;
+}
+#avaliacoes {
+    min-height: 200px;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 3em;
+}
+.avaliacao {
+    min-height: 130px;
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.avaliacao .img-container {
+    width: 160px;
+}
+.avaliacao p {
+    color: var(--cor02);
+}
+#funcionarios {
+    background-color: white;
+    width: 100%;
+    display: flex;
+}
+.funcionario-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .7em;
+}
+.funcionario-container .img-container {
+    height: 400px;
+}
+.funcionario-info {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.funcionario-info p {
+    padding: .5em;
+    color: #000000b0;
+}
+#contate {
+    background-image: url('imagens/fundocontatenos.jpg');
+    background-size: cover;
+    background-position: right bottom;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contate form {
+    background-color: #ffffff99;
+    width: 480px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+.campos input {
+    border: none;
+    height: 45px;
+    background-color: #b9b9b9;
+    padding-left: 1em;
+}
+.campos button {
+    margin-top: 8px;
+    cursor: pointer;
+    width: 100px;
+    border-color: #a8a8a8;
+    background-color: #cacaca;
+    color: #535353;
+    padding: .8em 1em;
+}
+#contate form p {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #00000099;
+    gap: .3em;
+}
+#contate form p b {
+    font-size: 1.8em;
+    color: black;
+}
+.footer-container {
+    padding: 0 .3em;
+    color: #00000099;
+    max-width: 750px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #00000099;
+}
+footer a {
+    color: #00000099;
+    font-weight: bold;
+}
+.redes-sociais {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.redes-sociais .img-container {
+    width: 28px;
+    opacity: .6;
+}
+
+@media screen and (max-width:1024px) {
+    #funcionarios {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .funcionario-container {
+        margin: auto;
+        width: 360px;
+    }
+    .funcionario-container .img-container img {
+        height: 400px;
+    }
+    .footer-container {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #avaliacoes {
+        gap: 2em;
+    }
+    .funcionario-container {
+        margin: auto;
+        width: 320px;
+    }
+    .funcionario-container .img-container img {
+        height: 360px;
+    }
+    .menu-item {
+        display: none;
+    }
+}
+@media screen and (max-width:320px) {
+    header {
+        justify-content: space-between;
+        padding: 0 1em;
+    }
+    #inicio p {
+        font-size: 2em;
+    }
+    .footer-container {
+        padding: 1.5em 0;
+        flex-direction: column;
+        gap: .8em;
+    }
 }
